@@ -12,9 +12,21 @@ export default function (store: IStore) {
   const removeStorage = (key: string) => {
     storage.removeItem(key);
   };
+  // Get storage
+  const getStorage: any = (key: string) => {
+    return JSON.parse(storage.getItem(key));
+  };
   //Watch VUE store
   store.subscribe((mutation, state) => {
     removeStorage(STORAGE_KEY);
     setStorage(state);
   });
+  //Replace store
+  const replaceState = () => {
+    const state: any = getStorage(STORAGE_KEY);
+    if (typeof state === "object") {
+      store.replaceState(state);
+    }
+  };
+  replaceState();
 }
