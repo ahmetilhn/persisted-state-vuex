@@ -16,11 +16,6 @@ export default function (store: IStore) {
   const getStorage: any = (key: string) => {
     return JSON.parse(storage.getItem(key));
   };
-  //Watch VUE store
-  store.subscribe((mutation, state) => {
-    removeStorage(STORAGE_KEY);
-    setStorage(state);
-  });
   //Replace store
   const replaceState = () => {
     const state: any = getStorage(STORAGE_KEY);
@@ -28,5 +23,11 @@ export default function (store: IStore) {
       store.replaceState(state);
     }
   };
+  //Watch VUE store
+  store.subscribe((mutation, state) => {
+    removeStorage(STORAGE_KEY);
+    setStorage(state);
+  });
+  // Inital function project after created for replace state
   replaceState();
 }
