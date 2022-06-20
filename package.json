@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Persisted state for Vue3 and Pinia",
   "scripts": {
-    "build": "tsc --watch"
+    "build": "rm -r demo-vue-project/node_modules/persisted-state/dist && tsc --watch"
   },
   "repository": "https://github.com/ahmetilhan24/persisted-state.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
