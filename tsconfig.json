@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "target": "ES5",
+    "target": "ES6",
     "noImplicitAny": true,
     "removeComments": true,
+    "noImplicitAny": false,
     "rootDir": "./src",
-    "outDir": "./demo-vue-project/node_modules/persisted-state"
+    "outDir": "./demo-vue-project/node_modules/persisted-state/dist"
   },
   "include": ["src/app.ts"],
   "exclude": ["node_modules"]

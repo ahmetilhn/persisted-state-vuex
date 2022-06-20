@@ -1,14 +1,17 @@
 {
   "name": "persisted-state",
   "version": "1.0.0",
-  "description": "Persisted state for Vue3 and Pinia",
+  "description": "Persisted state for Vue3",
   "scripts": {
-    "build": "tsc --watch"
+    "build": "rm -r demo-vue-project/node_modules/persisted-state/dist && tsc --watch"
   },
   "repository": "https://github.com/ahmetilhan24/persisted-state.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "vuex": "^4.0.2"
   }
 }
