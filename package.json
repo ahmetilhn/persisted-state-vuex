@@ -10,5 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "vuex": "^4.0.2"
   }
 }
