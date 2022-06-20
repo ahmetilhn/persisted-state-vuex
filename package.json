@@ -1,7 +1,7 @@
 {
   "name": "persisted-state",
   "version": "1.0.0",
-  "description": "Persisted state for Vue3 and Pinia",
+  "description": "Persisted state for Vue3",
   "scripts": {
     "build": "rm -r demo-vue-project/node_modules/persisted-state/dist && tsc --watch"
   },
