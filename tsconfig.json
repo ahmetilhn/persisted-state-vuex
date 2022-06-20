@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "removeComments": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./demo-vue-project/node_modules/persisted-state"
   },
   "include": ["src/app.ts"],
   "exclude": ["node_modules"]
