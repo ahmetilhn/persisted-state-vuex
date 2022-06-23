@@ -6,7 +6,7 @@
     "removeComments": true,
     "noImplicitAny": false,
     "rootDir": "./src",
-    "outDir": "./demo-vue-project/node_modules/persisted-state/dist"
+    "outDir": "./demo-vue-project/node_modules/persisted-state-vuex/dist"
   },
   "include": ["src/app.ts"],
   "exclude": ["node_modules"]
