@@ -1,1 +1,1 @@
-export const STORAGE_KEY = "vuex";
+export const STORAGE_KEY: string = "vuex";
