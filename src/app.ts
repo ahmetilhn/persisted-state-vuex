@@ -18,13 +18,13 @@ export default function (store: IStore) {
   };
   //Replace store
   const replaceState = () => {
-    const state: any = getStorage(STORAGE_KEY);
-    if (typeof state === "object") {
+    const state: object = getStorage(STORAGE_KEY);
+    if (state && typeof state === "object") {
       store.replaceState(state);
     }
   };
   //Watch VUE store
-  store.subscribe((mutation, state) => {
+  store.subscribe((_, state) => {
     removeStorage(STORAGE_KEY);
     setStorage(state);
   });
