@@ -1,4 +1,4 @@
-# persisted-state
+# persisted-state-vuex
 
 `v1.0.0`
 
@@ -7,19 +7,26 @@ _Vue takes effect immediately in case of any mutation (state change) in your pro
 ## Install
 
 ```bash
-npm install --save persisted-state
+npm install --save persisted-state-vuex
 ```
 
 ## Usage
 
 ```js
 import { createStore } from "vuex";
-import persistedState from "persisted-state";
+import persistedStateVuex from "persisted-state-vuex";
 
 const store = createStore({
   // ...
-  plugins: [persistedState],
+  plugins: [persistedStateVuex],
 });
+```
+
+### Optimum dependencies version
+
+```
+  "vue": "^3.2.13",
+  "vuex": "^4.0.0",
 ```
 
 - For usage with for Vue3
