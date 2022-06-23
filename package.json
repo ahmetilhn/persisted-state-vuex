@@ -1,9 +1,15 @@
 {
   "name": "persisted-state-vuex",
   "version": "1.0.0",
+  "keywords": [
+    "vue",
+    "vuex",
+    "plugin"
+  ],
+  "main": "./dist/app.js",
   "description": "Persisted state for Vuex and vue",
   "scripts": {
-    "build": "rm -r demo-vue-project/node_modules/persisted-state/dist && tsc --watch"
+    "build": "tsc --watch"
   },
   "repository": "https://github.com/ahmetilhan24/persisted-state-vuex.git",
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
