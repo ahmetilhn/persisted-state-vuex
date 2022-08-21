@@ -1,6 +1,6 @@
 # persisted-state-vuex
 
-`v1.0.1`
+`v1.0.3`
 
 _Vue takes effect immediately in case of any mutation (state change) in your project and keeps the current data in localstorage. Then it returns the last data after the page is loaded._
 
@@ -18,15 +18,32 @@ import persistedStateVuex from "persisted-state-vuex";
 
 const store = createStore({
   // ...
-  plugins: [persistedStateVuex],
+  plugins: [persistedStateVuex.init],
 });
 ```
 
+## With modular state
+
+```js
+import { createStore } from "vuex";
+import persistedStateVuex from "persisted-state-vuex";
+
+persistedStateVuex.config({
+  paths: ["exampleData"], // Modules names
+});
+
+const store = createStore({
+  // ...
+  plugins: [persistedStateVuex.init],
+});
+```
 ### Optimum dependencies version
 
 ```
-  "vue": "^3.2.13",
-  "vuex": "^4.0.0",
+
+"vue": "^3.2.13",
+"vuex": "^4.0.0",
+
 ```
 
 - For usage with for Vue3
