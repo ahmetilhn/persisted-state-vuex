@@ -55,6 +55,7 @@ export default {
             setStorage(payload);
           }
         });
+        return;
       }
       // no modules
       setStorage(state);
