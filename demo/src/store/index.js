@@ -1,10 +1,23 @@
 import { createStore } from "vuex";
 import persistedStateVuex from "../../../dist/app.js";
+persistedStateVuex.config({
+  paths: ["exampleData", "testData"],
+});
 export default createStore({
-  state: {},
+  state: {
+    exampleData: {},
+    testData: {},
+  },
   getters: {},
-  mutations: {},
+  mutations: {
+    setExampleData(state, payload) {
+      state.exampleData = payload;
+    },
+    setTestData(state, payload) {
+      state.testData = payload;
+    },
+  },
   actions: {},
   modules: {},
-  plugins: [persistedStateVuex],
+  plugins: [persistedStateVuex.init],
 });

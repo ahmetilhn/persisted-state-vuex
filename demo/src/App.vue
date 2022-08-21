@@ -2,6 +2,7 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Welcome to Your Vue.js App" />
   <button @click="setStore">Set store</button>
+  <button @click="setTestData">Set test data</button>
 </template>
 
 <script>
@@ -13,8 +14,14 @@ export default {
   },
   methods: {
     setStore() {
-      console.log("asdaksjld");
+      this.$store.commit("setExampleData", { name: "ahmet" });
     },
+    setTestData() {
+      this.$store.commit("setTestData", { name: "test" });
+    },
+  },
+  mounted() {
+    console.log(this.$store.state);
   },
 };
 </script>
