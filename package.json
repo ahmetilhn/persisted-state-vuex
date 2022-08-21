@@ -4,10 +4,11 @@
   "keywords": [
     "vue",
     "vuex",
-    "plugin""persisted-state",
+    "plugin",
+    "persisted-state",
     "persisted-store",
     "vuex-plugins",
-    "vuex-persisted-store",
+    "vuex-persisted-store"
   ],
   "main": "./dist/app.js",
   "description": "Persisted state for Vue (vuex)",
