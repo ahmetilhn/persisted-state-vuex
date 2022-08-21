@@ -1,7 +1,7 @@
 import IStore from "./interfaces/IStore";
 import IStorage from "./interfaces/IStorage";
-import { STORAGE_KEY } from "./constants/storage.constants";
 import IOptions from "./interfaces/IOptions";
+import { STORAGE_KEY } from "./constants/storage.constants";
 
 let options: IOptions = {};
 
