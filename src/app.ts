@@ -6,8 +6,9 @@ import IOptions from "./interfaces/IOptions";
 let options: IOptions = {};
 
 export default {
+  //Config for moduler state
   config: (configOptions: IOptions) => {
-    if (options) {
+    if (configOptions) {
       options = configOptions;
     }
   },
@@ -27,17 +28,20 @@ export default {
     };
     //Replace store
     const replaceState = () => {
-      const state: object = getStorage(STORAGE_KEY);
-      if (state && typeof state === "object") {
+      const storedState: object = getStorage(STORAGE_KEY);
+      if (storedState && typeof storedState === "object") {
         if (options.paths) {
           const filteredState = store.state;
           options.paths.forEach((module, key) => {
-            filteredState[module] = state[module];
+            filteredState[module] = storedState[module];
             if (options.paths?.length === key + 1) {
               store.replaceState(filteredState);
             }
           });
+          return;
         }
+        // no modules
+        store.replaceState(storedState);
       }
     };
     //Watch VUE store
@@ -52,6 +56,8 @@ export default {
           }
         });
       }
+      // no modules
+      setStorage(state);
     });
     // Inital function project after created for replace state
     replaceState();

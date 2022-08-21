@@ -1,8 +1,8 @@
 import { createStore } from "vuex";
 import persistedStateVuex from "../../../dist/app.js";
-persistedStateVuex.config({
-  paths: ["exampleData"],
-});
+// persistedStateVuex.config({
+//   paths: ["exampleData"],
+// });
 export default createStore({
   state: {
     exampleData: {},
