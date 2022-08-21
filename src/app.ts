@@ -30,11 +30,11 @@ export default {
       const state: object = getStorage(STORAGE_KEY);
       if (state && typeof state === "object") {
         if (options.paths) {
-          const filteredState = state;
+          const filteredState = store.state;
           options.paths.forEach((module, key) => {
             filteredState[module] = state[module];
             if (options.paths?.length === key + 1) {
-              store.replaceState(state);
+              store.replaceState(filteredState);
             }
           });
         }
@@ -48,7 +48,7 @@ export default {
         options.paths.forEach((module, key) => {
           payload[module] = state[module];
           if (options.paths?.length === key + 1) {
-            console.log(state, payload);
+            setStorage(payload);
           }
         });
       }
