@@ -2942,6 +2942,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+persisted-state-vuex@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/persisted-state-vuex/-/persisted-state-vuex-1.0.1.tgz#6d66bf52e991828679641e3a18892b7b6e943de0"
+  integrity sha512-4OYBRYaQ5vL2tma6ePYtaA/lh0I0c0gYtPAHoPUCmXmXeT1BVkXCcu3aymgLWkx2IP4zoLQ6yWAY+Pm9/Tm21Q==
+
 picocolors@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-0.2.1.tgz#570670f793646851d1ba135996962abad587859f"

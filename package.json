@@ -1,13 +1,16 @@
 {
   "name": "persisted-state-vuex",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "keywords": [
     "vue",
     "vuex",
-    "plugin"
+    "plugin""persisted-state",
+    "persisted-store",
+    "vuex-plugins",
+    "vuex-persisted-store",
   ],
   "main": "./dist/app.js",
-  "description": "Persisted state for Vuex and vue",
+  "description": "Persisted state for Vue (vuex)",
   "scripts": {
     "build": "tsc --watch"
   },
