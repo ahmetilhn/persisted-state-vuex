@@ -2,6 +2,7 @@ import IStore from "./interfaces/IStore";
 import IStorage from "./interfaces/IStorage";
 import IOptions from "./interfaces/IOptions";
 import { STORAGE_KEY } from "./constants/storage.constants";
+import { getStorageKey } from "./config";
 
 let options: IOptions = {};
 
@@ -16,7 +17,7 @@ export default {
     const storage: IStorage = window.localStorage;
     // Set storage
     const setStorage = async (payload: object) => {
-      storage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      storage.setItem(getStorageKey(options), JSON.stringify(payload));
     };
     // Remove storage
     const removeStorage = (key: string) => {
