@@ -1,7 +1,6 @@
 import IStore from "./interfaces/IStore";
 import IStorage from "./interfaces/IStorage";
 import IOptions from "./interfaces/IOptions";
-import { STORAGE_KEY } from "./constants/storage.constants";
 import { getStorageKey } from "./config";
 import { storageLimitControl } from "./plugins/storage-limit-control";
 
@@ -15,7 +14,7 @@ export default {
     }
   },
   init: (store: IStore) => {
-    const storage: IStorage = window.localStorage;
+    const storage: IStorage = window?.localStorage;
     // Set storage
     const setStorage = async (payload: object) => {
       const isBelowLimit: boolean | undefined = await storageLimitControl(
@@ -26,16 +25,16 @@ export default {
       }
     };
     // Remove storage
-    const removeStorage = (key: string) => {
-      storage.removeItem(key);
+    const removeStorage = () => {
+      storage.removeItem(getStorageKey(options));
     };
     // Get storage
-    const getStorage: any = (key: string) => {
-      return JSON.parse(storage.getItem(key));
+    const getStorage: any = () => {
+      return JSON.parse(storage.getItem(getStorageKey(options)));
     };
     //Replace store
     const replaceState = () => {
-      const storedState: object = getStorage(STORAGE_KEY);
+      const storedState: object = getStorage();
       if (storedState && typeof storedState === "object") {
         if (options.paths) {
           const filteredState = store.state;
@@ -53,7 +52,7 @@ export default {
     };
     //Watch VUE store
     store.subscribe((_, state) => {
-      removeStorage(STORAGE_KEY);
+      removeStorage();
       if (options.paths) {
         const payload: object = {};
         options.paths.forEach((module, key) => {
