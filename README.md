@@ -1,6 +1,6 @@
 # persisted-state-vuex
 
-`v1.0.5`
+`v1.0.6`
 
 _Vue takes effect immediately in case of any mutation (state change) in your project and keeps the current data in localstorage. Then it returns the last data after the page is loaded._
 
@@ -40,15 +40,15 @@ const store = createStore({
 
 ### With storage key
 
-```
+```js
 persistedStateVuex.config({
-  storageKey: ["vuex"], // default key
+  storageKey: "vuex", // default key(string)
 });
 ```
 
 ### Optimum dependencies version
 
-```
+```json
 "vue": "^3.2.13",
 "vuex": "^4.0.0",
 ```
