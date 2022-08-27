@@ -3,6 +3,7 @@ import IStorage from "./interfaces/IStorage";
 import IOptions from "./interfaces/IOptions";
 import { STORAGE_KEY } from "./constants/storage.constants";
 import { getStorageKey } from "./config";
+import { storageLimitControl } from "./plugins/storage-limit-control";
 
 let options: IOptions = {};
 
@@ -17,7 +18,12 @@ export default {
     const storage: IStorage = window.localStorage;
     // Set storage
     const setStorage = async (payload: object) => {
-      storage.setItem(getStorageKey(options), JSON.stringify(payload));
+      const isBelowLimit: boolean | undefined = await storageLimitControl(
+        String(payload)
+      );
+      if (isBelowLimit) {
+        storage.setItem(getStorageKey(options), JSON.stringify(payload));
+      }
     };
     // Remove storage
     const removeStorage = (key: string) => {
