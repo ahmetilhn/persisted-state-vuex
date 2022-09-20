@@ -1,8 +1,8 @@
 # persisted-state-vuex
 
-`v1.0.6`
+`v1.1.0`
 
-_Vue takes effect immediately in case of any mutation (state change) in your project and keeps the current data in localstorage. Then it returns the last data after the page is loaded._
+_Vue and Nuxt takes effect immediately in case of any mutation (state change) in your project and keeps the current data in localstorage. Then it returns the last data after the page is loaded._
 
 ## Install
 
@@ -51,6 +51,7 @@ persistedStateVuex.config({
 ```json
 "vue": "^3.2.13",
 "vuex": "^4.0.0",
+"nuxt": "^2.15.8"
 ```
 
 - For usage with for Vue3
@@ -58,5 +59,6 @@ persistedStateVuex.config({
 - No-async -> With sync
 - Module support
 - Storage limit control (localstorage = 5mb -> chrome)
+- Support for SSR project
 
 `Author by Ahmet ilhan`
